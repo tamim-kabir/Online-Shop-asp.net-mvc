@@ -191,6 +191,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\logo\Image-4.png" />
+    <Content Include="Images\logo\Logo-1.png" />
+    <Content Include="Images\logo\pay-method 280x50.png" />
+    <Content Include="Images\logo\pay-method.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -343,6 +347,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Banner\" />
+    <Folder Include="Images\ProductImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

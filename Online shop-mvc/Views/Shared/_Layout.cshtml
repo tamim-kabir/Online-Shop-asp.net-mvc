@@ -3,12 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Online store</title>
+    <!---fav-icon-->
+    <link rel="shortcut icon" href="~/Images/logo/Logo-1.png"/>
+    <!----using-font-awesome-for-icon--->
+    <script src="https://kit.fontawesome.com/6ab3d8336c.js" crossorigin="anonymous"></script>
+    <!-----render css and js-->
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
+    <!----------Nav Bar-->
+        <nav>
+            <!-----socila links and phone------->
+            <div class="social-call">
+                <!-----social----->
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-----Phone------->
+                <div class="phone">
+                    <span>+880-1642-400166</span>
+                </div>
+            </div>
+
+            <!--------menu-bar------->
+            <div class="navigation">
+                <!-----logo----->
+                <a class="logo" href="#">
+                    <img src="~/Images/logo/Image-4.png" />
+                </a>
+            </div>
+
+        </nav>
+   
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,7 +65,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Online shop</p>
         </footer>
     </div>
 
