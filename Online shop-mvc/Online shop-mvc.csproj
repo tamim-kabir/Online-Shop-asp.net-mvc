@@ -191,15 +191,37 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Banner\sale-1.jpg" />
+    <Content Include="Images\Banner\sale-2.jpg" />
+    <Content Include="Images\Banner\sale-3.jpg" />
+    <Content Include="Images\Feature\feature_1.jpg" />
+    <Content Include="Images\Feature\feature_2.jpg" />
+    <Content Include="Images\Feature\feature_3.jpg" />
+    <Content Include="Images\Feature\feature_4.jpg" />
+    <Content Include="Images\Feature\feature_5.jpg" />
+    <Content Include="Images\Feature\feature_6.jpg" />
     <Content Include="Images\logo\Image-4.png" />
     <Content Include="Images\logo\Logo-1.png" />
+    <Content Include="Images\logo\logo.png" />
     <Content Include="Images\logo\pay-method 280x50.png" />
     <Content Include="Images\logo\pay-method.png" />
+    <Content Include="Images\ProductImages\p-1.png" />
+    <Content Include="Images\ProductImages\p-2.png" />
+    <Content Include="Images\ProductImages\p-3.png" />
+    <Content Include="Images\ProductImages\p-4.png" />
+    <Content Include="Images\ProductImages\p-5.png" />
+    <Content Include="Images\ProductImages\p-6.png" />
+    <Content Include="Images\ProductImages\p-7.png" />
+    <Content Include="Images\ProductImages\p-8.png" />
+    <Content Include="Images\slider\Slider_01.jpg" />
+    <Content Include="Images\slider\Slider_02.jpg" />
+    <Content Include="Images\slider\Slider_03.jpg" />
+    <Content Include="Images\slider\Slider_04.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Custom js\Site.js" />
+    <Content Include="Scripts\Custom_js\Site.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -350,8 +372,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Banner\" />
-    <Folder Include="Images\ProductImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

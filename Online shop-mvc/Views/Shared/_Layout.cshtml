@@ -49,11 +49,11 @@
             <!-------right-menu------->
             <div class="right-menu">
                 <!---search-->
-                <a href="#">
+                <a href="#" class="search">
                     <i class="fas fa-search"></i>
                 </a>
                 <!---login-->
-                <a href="#">
+                <a href="#" class="user">
                     <i class="far fa-user"></i>
                 </a><!---shopping-cart-->
                 <a href="#">
@@ -77,17 +77,84 @@
             </a>
         </div>
     </div>
+    <!-----login-and-signup-form------>
+    <div class="form">
+        <!--login-->
+        <div class="login-form">
+            <!--cancle-btn-->
+            <a href="#" class="form-cancle">
+                <i class="fas fa-times"></i>
+            </a>
+            <!--heading-->
+            <strong>Log In</strong>
+            <!--inputs-->
+            <input type="email" placeholder="Example@gmail.com" name="email" required/>
+            <input type="password" placeholder="Password" name="password" required/>
+            <!--submit-btn-->
+            <input type="submit" value="Log in" />
 
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your Password?</a>
+                <a href="#" class="sign-up">Create Account</a>
+            </div>
+        </div>
+        <!--Sign-up-form-->
+        <div class="sign-up-form">
+            <!--cancle-btn-->
+            <a href="#" class="form-cancle">
+                <i class="fas fa-times"></i>
+            </a>
+            <!--heading-->
+            <strong>sign up</strong>
+            <!--inputs-->
+            <input type="text" placeholder="Full Name" name="fullname" required/>
+            <input type="email" placeholder="Example@gmail.com" name="email" required/>
+            <input type="password" placeholder="Password" name="password" required/>
+            <!--submit-btn-->
+            <input type="submit" value="Sign Up" />
 
-    <div class="container body-content">
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your Password?</a>
+                <a href="#" class="already-account">Already have Account?</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="">
         @RenderBody()
+    </div>
+
+    <div class="">
+        
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Online shop</p>
         </footer>
     </div>
-    <script src="~/Scripts/Custom js/Site.js"></script>
+    <script src="~/Scripts/Custom_js/Site.js"></script>
     <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <!----scripts-->
+    <script type="text/javascript">
+        /*----search-bar-----*/
+        $(document).on('click', '.search', function () {
+            $('.search-bar').toggleClass('search-bar-active')
+        });
+
+        $(document).on('click', '.search-cancle', function () {
+            $('.search-bar').removeClass('search-bar-active')
+        });
+        /*----login-signup-form----*/
+        $(document).on('click', '.user, .already-account', function () {
+            $('.form').addClass('login-active').removeClass('sign-up-active')
+        });
+        $(document).on('click', '.sign-up', function () {
+            $('.form').addClass('sign-up-active').removeClass('login-active')
+        });
+        $(document).on('click', '.form-cancle', function () {
+            $('.form').removeClass('login-active').removeClass('sign-up-active')
+        });
+    </script>
     @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)*@
