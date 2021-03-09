@@ -304,6 +304,48 @@ nav{
     background-position:center;
 
 }
-.f-slider-1{
-    background-image:url()
+.f-slider-1 {
+    background-image: url('../Images/slider/Slider_01.jpg');
+}
+.slider-text-container{
+    width:80%;
+    height:90%;
+    display:flex;
+    align-items:center;
+}
+.f-slider-text{
+    display:flex;
+    flex-direction:column;
+    margin-right:auto;
+
+}
+.f-slider-text strong{
+    color:#333333;
+    font-size:3rem;
+    line-height:55px;
+    margin-top:10px;
+    letter-spacing:1px;
+
+}
+.f-slider-text span{
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-weight:500;
+    color:#666666;
+    font-size:1.2rem;
+}
+.f-slider-button{
+    width:170px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ffffff;
+    background-color:#0b9d8a;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    margin-top:14px;
+}
+.f-slider-text strong font {
+    color: #0b9d8a;
 }

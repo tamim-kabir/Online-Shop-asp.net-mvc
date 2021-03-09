@@ -8,12 +8,17 @@
     <link rel="shortcut icon" href="~/Images/logo/Logo-1.png" />
     <!----using-font-awesome-for-icon--->
     <script src="https://kit.fontawesome.com/6ab3d8336c.js" crossorigin="anonymous"></script>
-    <!-----render css and js-->
+    <!---Site-css---->
     <link href="~/Content/Site.css" rel="stylesheet" />
-    @*@Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")*@
+    <!-----Light-slider-css---->
+    <link href="~/Content/lightslider.css" rel="stylesheet" />
+    <!---Jquery---->    
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
 
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
 </head>
+
 <body>
     <!----------Nav Bar-->
     <nav>
@@ -36,7 +41,7 @@
         <div class="navigation">
             <!-----logo----->
             <a class="logo" href="#">
-                <img src="/Images/logo/Image-4.png" />
+                <img src="/Images/logo/logo.png" />
             </a>
             <!------menu------>
             <ul class="menu">
@@ -88,8 +93,8 @@
             <!--heading-->
             <strong>Log In</strong>
             <!--inputs-->
-            <input type="email" placeholder="Example@gmail.com" name="email" required/>
-            <input type="password" placeholder="Password" name="password" required/>
+            <input type="email" placeholder="Example@gmail.com" name="email" required />
+            <input type="password" placeholder="Password" name="password" required />
             <!--submit-btn-->
             <input type="submit" value="Log in" />
 
@@ -107,9 +112,9 @@
             <!--heading-->
             <strong>sign up</strong>
             <!--inputs-->
-            <input type="text" placeholder="Full Name" name="fullname" required/>
-            <input type="email" placeholder="Example@gmail.com" name="email" required/>
-            <input type="password" placeholder="Password" name="password" required/>
+            <input type="text" placeholder="Full Name" name="fullname" required />
+            <input type="email" placeholder="Example@gmail.com" name="email" required />
+            <input type="password" placeholder="Password" name="password" required />
             <!--submit-btn-->
             <input type="submit" value="Sign Up" />
 
@@ -120,20 +125,27 @@
         </div>
 
     </div>
+    <!---full-slider--->
+
+
 
     <div class="">
         @RenderBody()
     </div>
 
     <div class="">
-        
+
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Online shop</p>
         </footer>
     </div>
+    <!--Custom-js-->
     <script src="~/Scripts/Custom_js/Site.js"></script>
+    <!--Jquery-cdn-->
     <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <!-----Light-slider-js-->
+    <script src="~/Scripts/lightslider.js"></script>
     <!----scripts-->
     <script type="text/javascript">
         /*----search-bar-----*/
@@ -153,6 +165,15 @@
         });
         $(document).on('click', '.form-cancle', function () {
             $('.form').removeClass('login-active').removeClass('sign-up-active')
+        });
+        /*------full-slider------*/
+        $(document).ready(function () {
+            $('#adaptive').lightSlider({
+                adaptiveHeight: true,
+                item: 1,
+                slideMargin: 0,
+                loop: true
+            });
         });
     </script>
     @*@Scripts.Render("~/bundles/jquery")
