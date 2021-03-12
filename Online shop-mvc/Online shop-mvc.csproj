@@ -195,6 +195,7 @@
     <Content Include="Images\Banner\sale-1.jpg" />
     <Content Include="Images\Banner\sale-2.jpg" />
     <Content Include="Images\Banner\sale-3.jpg" />
+    <Content Include="Images\controls.png" />
     <Content Include="Images\Feature\feature_1.jpg" />
     <Content Include="Images\Feature\feature_2.jpg" />
     <Content Include="Images\Feature\feature_3.jpg" />
