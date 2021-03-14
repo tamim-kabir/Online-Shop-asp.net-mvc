@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb3ae6216f5f47ca8662e602d2813203" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.sysdiagram" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Cart" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_CartStatus" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Category" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Order" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Payment" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Product" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_Role" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_ShippingDetails" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_SliderImages" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_User" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_OnlineShopModel1.Tbl_UserRole" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Cart__CartSt__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Cart__Produc__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Cart__UserId__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Produ__Categ__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Order__Produ__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Order__UserI__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Shipp__Payme__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_User__RoleID__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_UserR__RoleI__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_Shipp__UserI__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_OnlineShopModel1.FK__Tbl_UserR__UserI__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

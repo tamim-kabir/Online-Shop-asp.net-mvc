@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Online store</title>
     <!---fav-icon-->
@@ -43,6 +44,9 @@
             <a class="logo" href="#">
                 <img src="/Images/logo/logo.png" />
             </a>
+            <!--Burger-menu-icon-->
+            <div class="toggle"></div>
+
             <!------menu------>
             <ul class="menu">
                 <li><a href="#">Home</a></li>
@@ -54,14 +58,14 @@
             <!-------right-menu------->
             <div class="right-menu">
                 <!---search-->
-                <a href="#" class="search">
+                <a href="javascript:void(0)" class="search">
                     <i class="fas fa-search"></i>
                 </a>
                 <!---login-->
-                <a href="#" class="user">
+                <a href="javascript:void(0)" class="user">
                     <i class="far fa-user"></i>
                 </a><!---shopping-cart-->
-                <a href="#">
+                <a href="javascript:void(0)">
                     <i class="fas fa-shopping-cart">
                         <!--------cart-product-count----->
                         <span class="cart-product-count">0</span>
@@ -77,7 +81,7 @@
         <div class="search-input">
             <input type="text" placeholder="Search for product" />
             <!----search-cancle-->
-            <a href="#" class="search-cancle">
+            <a href="javascript:void(0)" class="search-cancle">
                 <i class="fas fa-times"></i>
             </a>
         </div>
@@ -87,7 +91,7 @@
         <!--login-->
         <div class="login-form">
             <!--cancle-btn-->
-            <a href="#" class="form-cancle">
+            <a href="javascript:void(0)" class="form-cancle">
                 <i class="fas fa-times"></i>
             </a>
             <!--heading-->
@@ -100,13 +104,13 @@
 
             <div class="form-btns">
                 <a href="#" class="forget">Forget Your Password?</a>
-                <a href="#" class="sign-up">Create Account</a>
+                <a href="javascript:void(0)" class="sign-up">Create Account</a>
             </div>
         </div>
         <!--Sign-up-form-->
         <div class="sign-up-form">
             <!--cancle-btn-->
-            <a href="#" class="form-cancle">
+            <a href="javascript:void(0)" class="form-cancle">
                 <i class="fas fa-times"></i>
             </a>
             <!--heading-->
@@ -120,7 +124,7 @@
 
             <div class="form-btns">
                 <a href="#" class="forget">Forget Your Password?</a>
-                <a href="#" class="already-account">Already have Account?</a>
+                <a href="javascript:void(0)" class="already-account">Already have Account?</a>
             </div>
         </div>
 
@@ -130,14 +134,25 @@
     <div class="">
         @RenderBody()
     </div>
-
-    <div class="">
-
+    <!--footer-section-->
+    <section>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Online shop</p>
+            <!--Copy Right-->
+            <span class="copyright">
+                Copyright &copy; @DateTime.Now.Year - Online shop
+            </span>
+            <!--Subscribe-->
+            <div class="subscribe">
+                <form>
+                    <input type="email" placeholder="Example@yourmail.com" required>
+                    <input type="submit" value="Subscribe" >
+                </form>
+            </div>
         </footer>
-    </div>
+    </section>
+     
+   
     <!--Custom-js-->
     <script src="~/Scripts/Custom_js/Site.js"></script>
     <!--Jquery-cdn-->
@@ -154,6 +169,7 @@
         $(document).on('click', '.search-cancle', function () {
             $('.search-bar').removeClass('search-bar-active')
         });
+        
         /*----login-signup-form----*/
         $(document).on('click', '.user, .already-account', function () {
             $('.form').addClass('login-active').removeClass('sign-up-active')
@@ -164,6 +180,7 @@
         $(document).on('click', '.form-cancle', function () {
             $('.form').removeClass('login-active').removeClass('sign-up-active')
         });
+        
         /*------full-slider------*/
         $(document).ready(function () {
             $('#adaptive').lightSlider({
@@ -188,6 +205,22 @@
                 }
             });
         });
+        /*------Footer-menu-when-scroll------*/
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.navigation').addClass('fix-nav');
+            }
+            else {
+                $('.navigation').removeClass('fix-nav');
+            }
+        })
+        /*---toggle-menu-resposive----*/
+        $(document).ready(function () {
+            $('.toggle').click(function () {
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        })
 
     </script>
     @*@Scripts.Render("~/bundles/jquery")
