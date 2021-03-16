@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_OnlineShopModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_OnlineShopModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -96,6 +96,8 @@
           <Property Name="IsActive" Type="bit" />
           <Property Name="IsDeleted" Type="bit" />
           <Property Name="Note" Type="varchar" MaxLength="500" />
+          <Property Name="Quantity" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="Tbl_Role">
           <Key>
@@ -118,6 +120,7 @@
           <Property Name="OrderId" Type="int" />
           <Property Name="PaidAmount" Type="varchar" MaxLength="20" />
           <Property Name="PaymentId" Type="int" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Tbl_SliderImages">
           <Key>
@@ -347,8 +350,7 @@
             <End Role="Tbl_UserRole" EntitySet="Tbl_UserRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_OnlineShopModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -454,6 +456,8 @@
           <NavigationProperty Name="Tbl_Cart" Relationship="Self.FK__Tbl_Cart__Produc__34C8D9D1" FromRole="Tbl_Product" ToRole="Tbl_Cart" />
           <NavigationProperty Name="Tbl_Category" Relationship="Self.FK__Tbl_Produ__Categ__2B3F6F97" FromRole="Tbl_Product" ToRole="Tbl_Category" />
           <NavigationProperty Name="Tbl_Order" Relationship="Self.FK__Tbl_Order__Produ__44FF419A" FromRole="Tbl_Product" ToRole="Tbl_Order" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="Tbl_Role">
           <Key>
@@ -480,6 +484,7 @@
           <Property Name="PaymentId" Type="Int32" />
           <NavigationProperty Name="Tbl_Payment" Relationship="Self.FK__Tbl_Shipp__Payme__3E52440B" FromRole="Tbl_ShippingDetails" ToRole="Tbl_Payment" />
           <NavigationProperty Name="Tbl_User" Relationship="Self.FK__Tbl_Shipp__UserI__3D5E1FD2" FromRole="Tbl_ShippingDetails" ToRole="Tbl_User" />
+          <Property Name="PaymentType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_SliderImages">
           <Key>
@@ -796,6 +801,8 @@
           <EntitySetMapping Name="Tbl_Product">
             <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Product">
               <MappingFragment StoreEntitySet="Tbl_Product">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
@@ -832,6 +839,7 @@
           <EntitySetMapping Name="Tbl_ShippingDetails">
             <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_ShippingDetails">
               <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Addres" ColumnName="Addres" />
