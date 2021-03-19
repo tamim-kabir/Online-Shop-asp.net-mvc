@@ -1,0 +1,19 @@
+﻿footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-top: 0px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #4e4e4e;
+    letter-spacing: 1px;
+}
+.pull-right{
+    float:right !important;
+    justify-content:space-between !important;
+}
+
