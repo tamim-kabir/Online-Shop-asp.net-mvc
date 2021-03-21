@@ -108,6 +108,7 @@ namespace Online_shop_mvc.Repository
         {
             _dbSet.Attach(entity);
             _DBEntity.Entry(entity).State = EntityState.Modified;
+            _DBEntity.SaveChanges();
         }
 
         public void UpdateByWhareClause(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict)

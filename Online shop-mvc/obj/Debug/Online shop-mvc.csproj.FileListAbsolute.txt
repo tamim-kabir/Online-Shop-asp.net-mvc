@@ -209,8 +209,8 @@ E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\bin\Micros
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.csprojAssemblyReference.cache
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.csproj.CoreCompileInputs.cache
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.csproj.CopyComplete
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.dll
 E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.pdb
+E:\Programs\C# Projects\Asp.net Projects\Online Store\Online shop-mvc\obj\Debug\Online shop-mvc.csprojAssemblyReference.cache

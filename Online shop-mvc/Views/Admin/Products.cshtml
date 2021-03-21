@@ -1,9 +1,10 @@
-﻿@model IEnumerable<Online_shop_mvc.DAL.Tbl_Category>
+﻿@model IEnumerable<Online_shop_mvc.DAL.Tbl_Product>
 
 @{
-    ViewBag.Title = "Categories";
+    ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <div class="container-fluid">
 
     <!-- Page-breadcrumb -->
@@ -12,7 +13,7 @@
             <a href="../Admin/Index">Deshboard</a>
         </li>
         <li class="breadcrumb-item active">
-            Categories
+            Products
         </li>
     </ol>
     <p class="mb-4">
@@ -23,44 +24,50 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <span>Categories Details</span>
-            <a class="btn btn-info pull-right" href="../Admin/AddCategory"><i class="fas fa-plus"></i><span>Add New</span></a>
+            <a class="btn btn-info pull-right" href="../Admin/AddProduct"><i class="fas fa-plus"></i><span>Add Product</span></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Category Name</th>
+                            <th>Name</th>
+                            <th>Price</th>
                             <th>DescripTion</th>
+                            <th>Active</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Category Name</th>
+                            <th>Name</th>
+                            <th>Price</th>
                             <th>DescripTion</th>
+                            <th>Active</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach(var item in Model)
-                        {                            
+                         {
                             <tr>
-                                <td>@item.CategoryName</td>
-                                <td>@item.CategoryDescription</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Price </td>
+                                <td>@item.ProductDescription</td>
+                                <td>@item.IsActive </td>
+
                                 <td>
-                                    @Html.ActionLink("Edit", "EditCategory", new { categoryId = item.ID }) |
+                                    @Html.ActionLink("Edit", "EditProduct", new { productId = item.ID }) |
                                     @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                    @Html.ActionLink("Delete", "DeleteCategory", new { categoryId = item.ID })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                                 </td>
                             </tr>
-                        }
+                         }                     
 
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->
