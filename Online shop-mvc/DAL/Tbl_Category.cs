@@ -20,7 +20,7 @@ namespace Online_shop_mvc.DAL
             this.Tbl_Product = new HashSet<Tbl_Product>();
         }
     
-        public int ID { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CatagoryImagePath { get; set; }
         public string CategoryDescription { get; set; }

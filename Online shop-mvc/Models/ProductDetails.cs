@@ -19,7 +19,10 @@ namespace Online_shop_mvc.Models
         [Range(1, 100)]
         public Nullable<int> CategoryID { get; set; }
         public Nullable<int> BrandID { get; set; }
+        [Display(Name = "Created Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedDate { get; set; }
+        
         public Nullable<System.DateTime> MdifiedDate { get; set; }
         [Required(ErrorMessage ="Price are required")]
         [Range(typeof(decimal), "1", "10000000", ErrorMessage ="Iivalid price or value detect")]

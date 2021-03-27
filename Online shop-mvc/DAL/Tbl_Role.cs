@@ -21,7 +21,7 @@ namespace Online_shop_mvc.DAL
             this.Tbl_UserRole = new HashSet<Tbl_UserRole>();
         }
     
-        public int ID { get; set; }
+        public int RoleId { get; set; }
         public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -2,6 +2,8 @@
 using Online_shop_mvc.DAL;
 using Online_shop_mvc.Models;
 using Online_shop_mvc.Repository;
+using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace Online_shop_mvc.Controllers
@@ -54,14 +56,30 @@ namespace Online_shop_mvc.Controllers
         #endregion Category Controller
 
 #region product Contr0ller
+
         public ActionResult Products()
         {
             return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetAllRecords());
         }
-
+        public List<SelectListItem> GetCategory()
+        {
+            List<SelectListItem> CategoryList = new List<SelectListItem>();
+            var categoryLs = _unitOfWork.GetRepositoryInstance<Tbl_Category>().GetAllRecords();
+            foreach(var item in categoryLs)
+            {
+                
+                CategoryList.Add(new SelectListItem { Value = item.CategoryId.ToString(), Text = item.CategoryName });
+            }
+            return CategoryList;
+        }
         public ActionResult AddProduct()
         {
-            return View();
+            ViewBag.CategoryList = GetCategory();
+            Tbl_Product cratedtedDate = new Tbl_Product()
+            {
+                CreatedDate = DateTime.Now
+            };
+            return View(cratedtedDate);
         }
         [HttpPost]
         public ActionResult AddProduct(Tbl_Product tbl)
@@ -71,7 +89,8 @@ namespace Online_shop_mvc.Controllers
         }
 
         public ActionResult EditProduct(int productId)
-        {            
+        {
+            ViewBag.CategoryList = GetCategory();
             return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId));
         }
         [HttpPost]

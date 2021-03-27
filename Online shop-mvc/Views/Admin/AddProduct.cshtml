@@ -59,8 +59,9 @@
 
                 <div class="form-group">
                     <label class="control-label">Select Category</label>
+                    @{List<SelectListItem> data = ViewBag.CategoryList;}
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.DropDownListFor(model => model.CategoryID, data,"---Select Category---", new{ htmlAttributes = new{ @class = "form-control"}})
                         @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -68,7 +69,7 @@
                 <div class="form-group">
                     <label class="control-label">Created Date</label>
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { Value = Model.CreatedDate?.ToString("dd-mm-yyyy") } })
                         @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
                     </div>
                 </div>

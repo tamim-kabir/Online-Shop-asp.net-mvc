@@ -20,7 +20,7 @@ namespace Online_shop_mvc.DAL
             this.Tbl_Cart = new HashSet<Tbl_Cart>();
         }
     
-        public int ID { get; set; }
+        public int CartStatusId { get; set; }
         public string CartStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

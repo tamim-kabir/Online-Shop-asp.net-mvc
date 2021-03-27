@@ -14,7 +14,7 @@ namespace Online_shop_mvc.DAL
     
     public partial class Tbl_UserRole
     {
-        public int ID { get; set; }
+        public int UserRoleId { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> RoleId { get; set; }
     

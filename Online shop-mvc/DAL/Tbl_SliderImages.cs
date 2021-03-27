@@ -14,7 +14,7 @@ namespace Online_shop_mvc.DAL
     
     public partial class Tbl_SliderImages
     {
-        public int ID { get; set; }
+        public int SliderImagesId { get; set; }
         public string SliderTitle { get; set; }
         public string SliderImagesPath { get; set; }
     }

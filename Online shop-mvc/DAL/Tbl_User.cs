@@ -19,15 +19,16 @@ namespace Online_shop_mvc.DAL
         {
             this.Tbl_Cart = new HashSet<Tbl_Cart>();
             this.Tbl_Order = new HashSet<Tbl_Order>();
+            this.Tbl_Product = new HashSet<Tbl_Product>();
             this.Tbl_ShippingDetails = new HashSet<Tbl_ShippingDetails>();
             this.Tbl_UserRole = new HashSet<Tbl_UserRole>();
         }
     
-        public int ID { get; set; }
+        public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }
-        public Nullable<int> RoleID { get; set; }
+        public Nullable<int> RoleId { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string PresentAdderess { get; set; }
@@ -45,6 +46,8 @@ namespace Online_shop_mvc.DAL
         public virtual ICollection<Tbl_Cart> Tbl_Cart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Order> Tbl_Order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Product> Tbl_Product { get; set; }
         public virtual Tbl_Role Tbl_Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_ShippingDetails> Tbl_ShippingDetails { get; set; }

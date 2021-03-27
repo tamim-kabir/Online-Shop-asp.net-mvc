@@ -14,7 +14,7 @@ namespace Online_shop_mvc.DAL
     
     public partial class Tbl_Cart
     {
-        public int ID { get; set; }
+        public int CartId { get; set; }
         public Nullable<int> ProductId { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> CartStatusId { get; set; }

@@ -20,7 +20,7 @@ namespace Online_shop_mvc.DAL
             this.Tbl_ShippingDetails = new HashSet<Tbl_ShippingDetails>();
         }
     
-        public int ID { get; set; }
+        public int PaymentId { get; set; }
         public string PaymentType { get; set; }
         public Nullable<System.DateTime> PaymentDate { get; set; }
         public Nullable<bool> PaymentAllowed { get; set; }

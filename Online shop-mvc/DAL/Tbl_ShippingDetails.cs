@@ -14,7 +14,7 @@ namespace Online_shop_mvc.DAL
     
     public partial class Tbl_ShippingDetails
     {
-        public int ID { get; set; }
+        public int ShippingDetailsId { get; set; }
         public Nullable<int> UserId { get; set; }
         public string Addres { get; set; }
         public string City { get; set; }
@@ -24,7 +24,6 @@ namespace Online_shop_mvc.DAL
         public Nullable<int> OrderId { get; set; }
         public string PaidAmount { get; set; }
         public Nullable<int> PaymentId { get; set; }
-        public string PaymentType { get; set; }
     
         public virtual Tbl_Payment Tbl_Payment { get; set; }
         public virtual Tbl_User Tbl_User { get; set; }

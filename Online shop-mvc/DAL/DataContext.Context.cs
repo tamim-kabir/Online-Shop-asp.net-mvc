@@ -13,10 +13,10 @@ namespace Online_shop_mvc.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB_OnlineShopEntities1 : DbContext
+    public partial class db_OnlineShopEntities : DbContext
     {
-        public DB_OnlineShopEntities1()
-            : base("name=DB_OnlineShopEntities1")
+        public db_OnlineShopEntities()
+            : base("name=db_OnlineShopEntities")
         {
         }
     
@@ -25,7 +25,6 @@ namespace Online_shop_mvc.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tbl_Cart> Tbl_Cart { get; set; }
         public virtual DbSet<Tbl_CartStatus> Tbl_CartStatus { get; set; }
         public virtual DbSet<Tbl_Category> Tbl_Category { get; set; }

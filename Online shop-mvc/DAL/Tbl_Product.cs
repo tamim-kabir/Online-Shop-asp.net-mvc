@@ -21,12 +21,13 @@ namespace Online_shop_mvc.DAL
             this.Tbl_Order = new HashSet<Tbl_Order>();
         }
     
-        public int ID { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string ProductImagePath { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public Nullable<int> BrandID { get; set; }
+        public Nullable<int> CategoryId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> BrandId { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> MdifiedDate { get; set; }
         public string UnitPrice { get; set; }
@@ -43,13 +44,12 @@ namespace Online_shop_mvc.DAL
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public string Note { get; set; }
-        public string Quantity { get; set; }
-        public Nullable<decimal> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Cart> Tbl_Cart { get; set; }
         public virtual Tbl_Category Tbl_Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Order> Tbl_Order { get; set; }
+        public virtual Tbl_User Tbl_User { get; set; }
     }
 }

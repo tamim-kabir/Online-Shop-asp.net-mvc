@@ -14,9 +14,9 @@ namespace Online_shop_mvc.DAL
     
     public partial class Tbl_Order
     {
-        public int ID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public int OrderId { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> UserId { get; set; }
         public string OrderNumber { get; set; }
         public Nullable<bool> Complete { get; set; }
         public Nullable<bool> OnHold { get; set; }
