@@ -11,7 +11,8 @@ namespace Online_shop_mvc.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tbl_Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,7 +29,11 @@ namespace Online_shop_mvc.DAL
         public Nullable<int> CategoryId { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> BrandId { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedDate { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> MdifiedDate { get; set; }
         public string UnitPrice { get; set; }
         public string SKU { get; set; }
@@ -44,6 +49,8 @@ namespace Online_shop_mvc.DAL
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public string Note { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public string Quantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Cart> Tbl_Cart { get; set; }

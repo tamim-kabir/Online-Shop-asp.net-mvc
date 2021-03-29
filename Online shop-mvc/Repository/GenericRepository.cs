@@ -11,8 +11,8 @@ namespace Online_shop_mvc.Repository
     public class GenericRepository<Tbl_Entity>:IRepository<Tbl_Entity> where Tbl_Entity : class
     {
         DbSet<Tbl_Entity> _dbSet;
-        private DB_OnlineShopEntities1 _DBEntity;
-        public GenericRepository(DB_OnlineShopEntities1 DBEntity)
+        private db_OnlineShopEntities _DBEntity;
+        public GenericRepository(db_OnlineShopEntities DBEntity)
         {
             this._DBEntity = DBEntity;
             this._dbSet = _DBEntity.Set<Tbl_Entity>();

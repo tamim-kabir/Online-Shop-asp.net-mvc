@@ -49,9 +49,9 @@
                                 <td>@item.CategoryName</td>
                                 <td>@item.CategoryDescription</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "EditCategory", new { categoryId = item.ID }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                    @Html.ActionLink("Delete", "DeleteCategory", new { categoryId = item.ID })
+                                    @Html.ActionLink("Edit", "EditCategory", new { categoryId = item.CategoryId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+                                    @Html.ActionLink("Delete", "DeleteCategory", new { categoryId = item.CategoryId })
                                 </td>
                             </tr>
                         }

@@ -59,18 +59,10 @@
 
                 <div class="form-group">
                     <label class="control-label">Select Category</label>
-                    @{List<SelectListItem> data = ViewBag.CategoryList;}
+                    @{List<SelectListItem> CategoryList = ViewBag.CategoryList;}
                     <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.CategoryID, data,"---Select Category---", new{ htmlAttributes = new{ @class = "form-control"}})
-                        @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label">Created Date</label>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { Value = Model.CreatedDate?.ToString("dd-mm-yyyy") } })
-                        @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                        @Html.DropDownListFor(model => model.CategoryId, CategoryList, "---Select Category---", new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -105,7 +97,7 @@
                         @Html.ValidationMessageFor(model => model.DiscountAvailable, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label">Discount Amount</label>
                     <div class="col-md-10">
@@ -151,6 +143,13 @@
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.ProductImagePath, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.ProductImagePath, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
                     </div>
                 </div>
 

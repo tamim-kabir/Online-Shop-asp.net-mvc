@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db_OnlineShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="db_OnlineShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tbl_Cart">
           <Key>
             <PropertyRef Name="CartId" />
@@ -87,6 +87,8 @@
           <Property Name="IsActive" Type="bit" />
           <Property Name="IsDeleted" Type="bit" />
           <Property Name="Note" Type="varchar" MaxLength="500" />
+          <Property Name="Price" Type="decimal" Precision="20" Scale="0" />
+          <Property Name="Quantity" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Tbl_Role">
           <Key>
@@ -353,8 +355,7 @@
             <End Role="Tbl_UserRole" EntitySet="Tbl_UserRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db_OnlineShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -452,6 +453,8 @@
           <NavigationProperty Name="Tbl_Category" Relationship="Self.FK__Tbl_Produ__Categ__2B3F6F97" FromRole="Tbl_Product" ToRole="Tbl_Category" />
           <NavigationProperty Name="Tbl_Order" Relationship="Self.FK__Tbl_Order__Produ__2F10007B" FromRole="Tbl_Product" ToRole="Tbl_Order" />
           <NavigationProperty Name="Tbl_User" Relationship="Self.FK__Tbl_Produ__UserI__2C3393D0" FromRole="Tbl_Product" ToRole="Tbl_User" />
+          <Property Name="Price" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="Quantity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_Role">
           <Key>
@@ -799,6 +802,8 @@
           <EntitySetMapping Name="Tbl_Product">
             <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Product">
               <MappingFragment StoreEntitySet="Tbl_Product">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />

@@ -55,52 +55,69 @@ namespace Online_shop_mvc.Controllers
         }
         #endregion Category Controller
 
-#region product Contr0ller
+#region product Controller
 
         public ActionResult Products()
         {
             return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetAllRecords());
         }
-        public List<SelectListItem> GetCategory()
+        [NonAction]
+        public List<SelectListItem> GetCategoryList()
         {
             List<SelectListItem> CategoryList = new List<SelectListItem>();
             var categoryLs = _unitOfWork.GetRepositoryInstance<Tbl_Category>().GetAllRecords();
             foreach(var item in categoryLs)
-            {
-                
+            {                
                 CategoryList.Add(new SelectListItem { Value = item.CategoryId.ToString(), Text = item.CategoryName });
             }
             return CategoryList;
         }
+
+        [HttpGet]
         public ActionResult AddProduct()
         {
-            ViewBag.CategoryList = GetCategory();
-            Tbl_Product cratedtedDate = new Tbl_Product()
-            {
-                CreatedDate = DateTime.Now
-            };
-            return View(cratedtedDate);
-        }
-        [HttpPost]
-        public ActionResult AddProduct(Tbl_Product tbl)
-        {
-            _unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
+            ViewBag.CategoryList = GetCategoryList();            
             return View();
         }
 
+        [HttpPost]
+        public ActionResult AddProduct(Tbl_Product tbl)
+        {
+            tbl.CreatedDate = DateTime.Now;
+            _unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
+            return Redirect("Products");
+        }
+        public List<SelectListItem> GetCategoryList(int id)
+        {
+            List<SelectListItem> CategoryList = new List<SelectListItem>();
+            var categoryLs = _unitOfWork.GetRepositoryInstance<Tbl_Category>().GetAllRecords();
+            int i = 0;
+            foreach(var item in categoryLs)
+            {
+                CategoryList.Add(new SelectListItem 
+                { 
+                    Value = item.CategoryId.ToString(),
+                    Text = item.CategoryName,
+                    Selected = (id == i)? true : false
+                });
+                i++;
+            }
+            return CategoryList;
+        }
+        [HttpGet]
         public ActionResult EditProduct(int productId)
         {
-            ViewBag.CategoryList = GetCategory();
-            return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId));
+            var Categories = _unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId);
+            ViewBag.CategoryListUsinId = GetCategoryList(1);
+            return View(Categories);
         }
         [HttpPost]
         public ActionResult EditProduct(Tbl_Product tbl)
         {
+            tbl.MdifiedDate = DateTime.Now;
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl);
             return View();
         }
-
-
 
 #endregion product controller
     }

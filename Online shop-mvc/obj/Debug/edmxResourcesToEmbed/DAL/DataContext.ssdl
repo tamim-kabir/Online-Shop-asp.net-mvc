@@ -1,36 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DB_OnlineShopModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
+<Schema Namespace="db_OnlineShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Tbl_Cart">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CartId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProductId" Type="int" />
     <Property Name="UserId" Type="int" />
     <Property Name="CartStatusId" Type="int" />
   </EntityType>
   <EntityType Name="Tbl_CartStatus">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CartStatusId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CartStatus" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Tbl_Category">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CategoryId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryName" Type="varchar" MaxLength="100" />
     <Property Name="CatagoryImagePath" Type="varchar(max)" />
     <Property Name="CategoryDescription" Type="varchar(max)" />
@@ -39,11 +29,11 @@
   </EntityType>
   <EntityType Name="Tbl_Order">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="OrderId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProductID" Type="int" />
-    <Property Name="UserID" Type="int" />
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="UserId" Type="int" />
     <Property Name="OrderNumber" Type="varchar" MaxLength="50" />
     <Property Name="Complete" Type="bit" />
     <Property Name="OnHold" Type="bit" />
@@ -57,9 +47,9 @@
   </EntityType>
   <EntityType Name="Tbl_Payment">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="PaymentId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PaymentType" Type="varchar" MaxLength="200" />
     <Property Name="PaymentDate" Type="datetime" />
     <Property Name="PaymentAllowed" Type="bit" />
@@ -67,14 +57,15 @@
   </EntityType>
   <EntityType Name="Tbl_Product">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="ProductId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProductName" Type="varchar" MaxLength="300" />
     <Property Name="ProductDescription" Type="varchar(max)" />
     <Property Name="ProductImagePath" Type="varchar(max)" />
-    <Property Name="CategoryID" Type="int" />
-    <Property Name="BrandID" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="BrandId" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="MdifiedDate" Type="datetime" />
     <Property Name="UnitPrice" Type="varchar" MaxLength="20" />
@@ -91,21 +82,21 @@
     <Property Name="IsActive" Type="bit" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="Note" Type="varchar" MaxLength="500" />
-    <Property Name="Quantity" Type="varchar" MaxLength="50" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Price" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="Quantity" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Tbl_Role">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="RoleId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoleName" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Tbl_ShippingDetails">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="ShippingDetailsId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShippingDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" />
     <Property Name="Addres" Type="varchar" MaxLength="500" />
     <Property Name="City" Type="varchar" MaxLength="100" />
@@ -115,25 +106,24 @@
     <Property Name="OrderId" Type="int" />
     <Property Name="PaidAmount" Type="varchar" MaxLength="20" />
     <Property Name="PaymentId" Type="int" />
-    <Property Name="PaymentType" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Tbl_SliderImages">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="SliderImagesId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SliderImagesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SliderTitle" Type="varchar" MaxLength="500" />
     <Property Name="SliderImagesPath" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Tbl_User">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="varchar" MaxLength="50" />
     <Property Name="LastName" Type="varchar" MaxLength="50" />
     <Property Name="Password" Type="varchar" MaxLength="500" />
-    <Property Name="RoleID" Type="int" />
+    <Property Name="RoleId" Type="int" />
     <Property Name="Phone" Type="varchar" MaxLength="20" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="PresentAdderess" Type="varchar" MaxLength="100" />
@@ -149,69 +139,69 @@
   </EntityType>
   <EntityType Name="Tbl_UserRole">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserRoleId" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" />
     <Property Name="RoleId" Type="int" />
   </EntityType>
-  <Association Name="FK__Tbl_Cart__CartSt__36B12243">
+  <Association Name="FK__Tbl_Cart__CartSt__38996AB5">
     <End Role="Tbl_CartStatus" Type="Self.Tbl_CartStatus" Multiplicity="0..1" />
     <End Role="Tbl_Cart" Type="Self.Tbl_Cart" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_CartStatus">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="CartStatusId" />
       </Principal>
       <Dependent Role="Tbl_Cart">
         <PropertyRef Name="CartStatusId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Cart__Produc__34C8D9D1">
+  <Association Name="FK__Tbl_Cart__Produc__36B12243">
     <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
     <End Role="Tbl_Cart" Type="Self.Tbl_Cart" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Product">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="ProductId" />
       </Principal>
       <Dependent Role="Tbl_Cart">
         <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Cart__UserId__35BCFE0A">
+  <Association Name="FK__Tbl_Cart__UserId__37A5467C">
     <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
     <End Role="Tbl_Cart" Type="Self.Tbl_Cart" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_User">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Tbl_Cart">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Order__Produ__44FF419A">
+  <Association Name="FK__Tbl_Order__Produ__2F10007B">
     <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
     <End Role="Tbl_Order" Type="Self.Tbl_Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Product">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="ProductId" />
       </Principal>
       <Dependent Role="Tbl_Order">
-        <PropertyRef Name="ProductID" />
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Order__UserI__45F365D3">
+  <Association Name="FK__Tbl_Order__UserI__300424B4">
     <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
     <End Role="Tbl_Order" Type="Self.Tbl_Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_User">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Tbl_Order">
-        <PropertyRef Name="UserID" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -220,75 +210,86 @@
     <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Category">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="CategoryId" />
       </Principal>
       <Dependent Role="Tbl_Product">
-        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="CategoryId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Shipp__Payme__3E52440B">
+  <Association Name="FK__Tbl_Produ__UserI__2C3393D0">
+    <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
+    <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tbl_Product">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Shipp__Payme__403A8C7D">
     <End Role="Tbl_Payment" Type="Self.Tbl_Payment" Multiplicity="0..1" />
     <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Payment">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="PaymentId" />
       </Principal>
       <Dependent Role="Tbl_ShippingDetails">
         <PropertyRef Name="PaymentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Shipp__UserI__3D5E1FD2">
+  <Association Name="FK__Tbl_Shipp__UserI__3F466844">
     <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
     <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_User">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Tbl_ShippingDetails">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_User__RoleID__267ABA7A">
+  <Association Name="FK__Tbl_User__RoleId__267ABA7A">
     <End Role="Tbl_Role" Type="Self.Tbl_Role" Multiplicity="0..1" />
     <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Role">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="RoleId" />
       </Principal>
       <Dependent Role="Tbl_User">
-        <PropertyRef Name="RoleID" />
+        <PropertyRef Name="RoleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_UserR__RoleI__3A81B327">
+  <Association Name="FK__Tbl_UserR__RoleI__3C69FB99">
     <End Role="Tbl_Role" Type="Self.Tbl_Role" Multiplicity="0..1" />
     <End Role="Tbl_UserRole" Type="Self.Tbl_UserRole" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_Role">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="RoleId" />
       </Principal>
       <Dependent Role="Tbl_UserRole">
         <PropertyRef Name="RoleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_UserR__UserI__398D8EEE">
+  <Association Name="FK__Tbl_UserR__UserI__3B75D760">
     <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
     <End Role="Tbl_UserRole" Type="Self.Tbl_UserRole" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tbl_User">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Tbl_UserRole">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DB_OnlineShopModel1StoreContainer">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  <EntityContainer Name="db_OnlineShopModelStoreContainer">
     <EntitySet Name="Tbl_Cart" EntityType="Self.Tbl_Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" Schema="dbo" store:Type="Tables" />
@@ -300,23 +301,23 @@
     <EntitySet Name="Tbl_SliderImages" EntityType="Self.Tbl_SliderImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_User" EntityType="Self.Tbl_User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_UserRole" EntityType="Self.Tbl_UserRole" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Tbl_Cart__CartSt__36B12243" Association="Self.FK__Tbl_Cart__CartSt__36B12243">
+    <AssociationSet Name="FK__Tbl_Cart__CartSt__38996AB5" Association="Self.FK__Tbl_Cart__CartSt__38996AB5">
       <End Role="Tbl_CartStatus" EntitySet="Tbl_CartStatus" />
       <End Role="Tbl_Cart" EntitySet="Tbl_Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Cart__Produc__34C8D9D1" Association="Self.FK__Tbl_Cart__Produc__34C8D9D1">
+    <AssociationSet Name="FK__Tbl_Cart__Produc__36B12243" Association="Self.FK__Tbl_Cart__Produc__36B12243">
       <End Role="Tbl_Product" EntitySet="Tbl_Product" />
       <End Role="Tbl_Cart" EntitySet="Tbl_Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Cart__UserId__35BCFE0A" Association="Self.FK__Tbl_Cart__UserId__35BCFE0A">
+    <AssociationSet Name="FK__Tbl_Cart__UserId__37A5467C" Association="Self.FK__Tbl_Cart__UserId__37A5467C">
       <End Role="Tbl_User" EntitySet="Tbl_User" />
       <End Role="Tbl_Cart" EntitySet="Tbl_Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Order__Produ__44FF419A" Association="Self.FK__Tbl_Order__Produ__44FF419A">
+    <AssociationSet Name="FK__Tbl_Order__Produ__2F10007B" Association="Self.FK__Tbl_Order__Produ__2F10007B">
       <End Role="Tbl_Product" EntitySet="Tbl_Product" />
       <End Role="Tbl_Order" EntitySet="Tbl_Order" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Order__UserI__45F365D3" Association="Self.FK__Tbl_Order__UserI__45F365D3">
+    <AssociationSet Name="FK__Tbl_Order__UserI__300424B4" Association="Self.FK__Tbl_Order__UserI__300424B4">
       <End Role="Tbl_User" EntitySet="Tbl_User" />
       <End Role="Tbl_Order" EntitySet="Tbl_Order" />
     </AssociationSet>
@@ -324,23 +325,27 @@
       <End Role="Tbl_Category" EntitySet="Tbl_Category" />
       <End Role="Tbl_Product" EntitySet="Tbl_Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Shipp__Payme__3E52440B" Association="Self.FK__Tbl_Shipp__Payme__3E52440B">
+    <AssociationSet Name="FK__Tbl_Produ__UserI__2C3393D0" Association="Self.FK__Tbl_Produ__UserI__2C3393D0">
+      <End Role="Tbl_User" EntitySet="Tbl_User" />
+      <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Shipp__Payme__403A8C7D" Association="Self.FK__Tbl_Shipp__Payme__403A8C7D">
       <End Role="Tbl_Payment" EntitySet="Tbl_Payment" />
       <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Shipp__UserI__3D5E1FD2" Association="Self.FK__Tbl_Shipp__UserI__3D5E1FD2">
+    <AssociationSet Name="FK__Tbl_Shipp__UserI__3F466844" Association="Self.FK__Tbl_Shipp__UserI__3F466844">
       <End Role="Tbl_User" EntitySet="Tbl_User" />
       <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_User__RoleID__267ABA7A" Association="Self.FK__Tbl_User__RoleID__267ABA7A">
+    <AssociationSet Name="FK__Tbl_User__RoleId__267ABA7A" Association="Self.FK__Tbl_User__RoleId__267ABA7A">
       <End Role="Tbl_Role" EntitySet="Tbl_Role" />
       <End Role="Tbl_User" EntitySet="Tbl_User" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_UserR__RoleI__3A81B327" Association="Self.FK__Tbl_UserR__RoleI__3A81B327">
+    <AssociationSet Name="FK__Tbl_UserR__RoleI__3C69FB99" Association="Self.FK__Tbl_UserR__RoleI__3C69FB99">
       <End Role="Tbl_Role" EntitySet="Tbl_Role" />
       <End Role="Tbl_UserRole" EntitySet="Tbl_UserRole" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_UserR__UserI__398D8EEE" Association="Self.FK__Tbl_UserR__UserI__398D8EEE">
+    <AssociationSet Name="FK__Tbl_UserR__UserI__3B75D760" Association="Self.FK__Tbl_UserR__UserI__3B75D760">
       <End Role="Tbl_User" EntitySet="Tbl_User" />
       <End Role="Tbl_UserRole" EntitySet="Tbl_UserRole" />
     </AssociationSet>

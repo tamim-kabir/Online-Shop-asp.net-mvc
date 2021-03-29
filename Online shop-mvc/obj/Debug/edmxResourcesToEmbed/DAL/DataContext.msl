@@ -1,21 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DB_OnlineShopModel1StoreContainer" CdmEntityContainer="DB_OnlineShopEntities1">
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="db_OnlineShopModelStoreContainer" CdmEntityContainer="db_OnlineShopEntities">
     <EntitySetMapping Name="Tbl_Cart">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Cart">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Cart">
         <MappingFragment StoreEntitySet="Tbl_Cart">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CartId" ColumnName="CartId" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
@@ -23,17 +12,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_CartStatus">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_CartStatus">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_CartStatus">
         <MappingFragment StoreEntitySet="Tbl_CartStatus">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
           <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Category">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Category">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Category">
         <MappingFragment StoreEntitySet="Tbl_Category">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="CatagoryImagePath" ColumnName="CatagoryImagePath" />
           <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
@@ -43,11 +32,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Order">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Order">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Order">
         <MappingFragment StoreEntitySet="Tbl_Order">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
           <ScalarProperty Name="Complete" ColumnName="Complete" />
           <ScalarProperty Name="OnHold" ColumnName="OnHold" />
@@ -62,9 +51,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Payment">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Payment">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Payment">
         <MappingFragment StoreEntitySet="Tbl_Payment">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
           <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
           <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
           <ScalarProperty Name="PaymentAllowed" ColumnName="PaymentAllowed" />
@@ -73,16 +62,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Product">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Product">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Product">
         <MappingFragment StoreEntitySet="Tbl_Product">
-          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
           <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="MdifiedDate" ColumnName="MdifiedDate" />
           <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
@@ -103,18 +93,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Role">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_Role">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_Role">
         <MappingFragment StoreEntitySet="Tbl_Role">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_ShippingDetails">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_ShippingDetails">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_ShippingDetails">
         <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
-          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShippingDetailsId" ColumnName="ShippingDetailsId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Addres" ColumnName="Addres" />
           <ScalarProperty Name="City" ColumnName="City" />
@@ -128,22 +117,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_SliderImages">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_SliderImages">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_SliderImages">
         <MappingFragment StoreEntitySet="Tbl_SliderImages">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SliderImagesId" ColumnName="SliderImagesId" />
           <ScalarProperty Name="SliderTitle" ColumnName="SliderTitle" />
           <ScalarProperty Name="SliderImagesPath" ColumnName="SliderImagesPath" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_User">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_User">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_User">
         <MappingFragment StoreEntitySet="Tbl_User">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="PresentAdderess" ColumnName="PresentAdderess" />
@@ -160,9 +149,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_UserRole">
-      <EntityTypeMapping TypeName="DB_OnlineShopModel1.Tbl_UserRole">
+      <EntityTypeMapping TypeName="db_OnlineShopModel.Tbl_UserRole">
         <MappingFragment StoreEntitySet="Tbl_UserRole">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
         </MappingFragment>

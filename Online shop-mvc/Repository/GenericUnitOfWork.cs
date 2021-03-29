@@ -8,7 +8,7 @@ namespace Online_shop_mvc.Repository
 {
     public class GenericUnitOfWork : IDisposable
     {
-        private DB_OnlineShopEntities1 DBEntity = new DB_OnlineShopEntities1();
+        private db_OnlineShopEntities DBEntity = new db_OnlineShopEntities();
 
         public IRepository<Tbl_EntityType> GetRepositoryInstance<Tbl_EntityType>() where Tbl_EntityType : class
         {
