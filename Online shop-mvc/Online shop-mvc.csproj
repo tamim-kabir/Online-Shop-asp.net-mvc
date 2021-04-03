@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CategoryDetails.cs" />
+    <Compile Include="Models\Home\HomeModelView.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProductDetails.cs" />

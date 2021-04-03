@@ -4,7 +4,9 @@ using Online_shop_mvc.Models;
 using Online_shop_mvc.Repository;
 using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace Online_shop_mvc.Controllers
 {
@@ -55,7 +57,7 @@ namespace Online_shop_mvc.Controllers
         }
         #endregion Category Controller
 
-#region product Controller
+#region product Controling methods
 
         public ActionResult Products()
         {
@@ -81,8 +83,16 @@ namespace Online_shop_mvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProduct(Tbl_Product tbl)
+        public ActionResult AddProduct(Tbl_Product tbl, HttpPostedFileBase file)
         {
+            string picture = null;
+            if(file != null)
+            {
+                picture = Path.GetFileName(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/Images/ProductImages/"), picture);
+                file.SaveAs(path);
+            }
+            tbl.ProductImagePath = picture;
             tbl.CreatedDate = DateTime.Now;
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
             return Redirect("Products");
@@ -108,17 +118,25 @@ namespace Online_shop_mvc.Controllers
         public ActionResult EditProduct(int productId)
         {
             var Categories = _unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId);
-            ViewBag.CategoryListUsinId = GetCategoryList(1);
+            ViewBag.CategoryListUsinId = GetCategoryList(Categories.CategoryId.Value);
             return View(Categories);
         }
         [HttpPost]
-        public ActionResult EditProduct(Tbl_Product tbl)
+        public ActionResult EditProduct(Tbl_Product tbl, HttpPostedFileBase file)
         {
+            string picture = null;
+            if(file != null)
+            {
+                picture = Path.GetFileName(file.FileName);
+                string path = Path.Combine(Server.MapPath("/Images/ProductImages/"), picture);
+                file.SaveAs(path);
+            }
+            tbl.ProductImagePath = file != null ? picture : tbl.ProductImagePath;
             tbl.MdifiedDate = DateTime.Now;
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl);
             return View();
         }
 
-#endregion product controller
+#endregion product Controling methods
     }
 }

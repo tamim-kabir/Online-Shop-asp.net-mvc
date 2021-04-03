@@ -35,6 +35,7 @@
                             <th>Price</th>
                             <th>DescripTion</th>
                             <th>Active</th>
+                            <th>CateId</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -44,6 +45,7 @@
                             <th>Price</th>
                             <th>DescripTion</th>
                             <th>Active</th>
+                            <th>CateId</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
@@ -55,10 +57,10 @@
                                 <td>@item.Price </td>
                                 <td>@item.ProductDescription</td>
                                 <td>@item.IsActive </td>
+                                <td>@item.CategoryId</td>
 
                                 <td>
-                                    @Html.ActionLink("Edit", "EditProduct", new { productId = item.ProductId }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                                    @Html.ActionLink("Edit", "EditProduct", new { productId = item.ProductId }) |                                   
                                     @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
                                 </td>
                             </tr>
